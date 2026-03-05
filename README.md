@@ -78,6 +78,7 @@ Learn more and see **real demos** on our official website.
        use: langchain_openai:ChatOpenAI  # LangChain class path
        model: gpt-4                      # Model identifier for API
        api_key: $OPENAI_API_KEY          # API key (recommended: use env var)
+       # base_url: $OPENAI_BASE_URL      # Optional: OpenAI-compatible endpoint
        max_tokens: 4096                  # Maximum tokens per request
        temperature: 0.7                  # Sampling temperature
    ```
@@ -95,6 +96,27 @@ Learn more and see **real demos** on our official website.
    OPENAI_API_KEY=your-openai-api-key
    # Add other provider keys as needed
    ```
+
+   For local cliproxyapi (OpenAI-compatible), add:
+
+   ```bash
+   OPENAI_API_KEY=your-cliproxyapi-key
+   OPENAI_BASE_URL=http://127.0.0.1:8317/v1
+   ```
+
+   and in `config.yaml`:
+
+   ```yaml
+   models:
+     - name: gpt-4-proxy
+       display_name: GPT-4 via cliproxyapi
+       use: langchain_openai:ChatOpenAI
+       model: gpt-4
+       api_key: $OPENAI_API_KEY
+       base_url: $OPENAI_BASE_URL
+   ```
+
+   `api_key` is forwarded to the configured OpenAI-compatible endpoint. If your backend runs in a container, `127.0.0.1` may not reach host services; use a host/service-resolvable address instead.
 
 - Option B: Export environment variables in your shell
 

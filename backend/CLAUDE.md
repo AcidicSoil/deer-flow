@@ -142,7 +142,7 @@ Configuration priority:
 3. `config.yaml` in current directory (backend/)
 4. `config.yaml` in parent directory (project root - **recommended location**)
 
-Config values starting with `$` are resolved as environment variables (e.g., `$OPENAI_API_KEY`).
+Config values starting with `$` are resolved as environment variables (e.g., `$OPENAI_API_KEY`, `$OPENAI_BASE_URL`).
 
 **Extensions Configuration** (`extensions_config.json`):
 

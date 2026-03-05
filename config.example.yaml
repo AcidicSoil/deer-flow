@@ -19,6 +19,7 @@ models:
     use: langchain_openai:ChatOpenAI
     model: gpt-4
     api_key: $OPENAI_API_KEY # Use environment variable
+    # base_url: $OPENAI_BASE_URL # Optional: OpenAI-compatible proxy endpoint (e.g. http://127.0.0.1:8317/v1)
     max_tokens: 4096
     temperature: 0.7
     supports_vision: true # Enable vision support for view_image tool

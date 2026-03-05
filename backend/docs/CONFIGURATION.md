@@ -42,6 +42,25 @@ models:
           type: enabled
 ```
 
+For local cliproxyapi (OpenAI-compatible), configure both `base_url` and `api_key`:
+
+```yaml
+models:
+  - name: gpt-4-proxy
+    display_name: GPT-4 via cliproxyapi
+    use: langchain_openai:ChatOpenAI
+    model: gpt-4
+    api_key: $OPENAI_API_KEY
+    base_url: $OPENAI_BASE_URL
+```
+
+```bash
+OPENAI_API_KEY=your-cliproxyapi-key
+OPENAI_BASE_URL=http://127.0.0.1:8317/v1
+```
+
+`api_key` is forwarded to the configured OpenAI-compatible endpoint. If your backend runs in a container, `127.0.0.1` may not reach host services; use a host/service-resolvable address instead.
+
 **Thinking Models**:
 Some models support "thinking" mode for complex reasoning:
 
@@ -183,7 +202,8 @@ models:
 ```
 
 **Common Environment Variables**:
-- `OPENAI_API_KEY` - OpenAI API key
+- `OPENAI_API_KEY` - OpenAI API key (or key expected by OpenAI-compatible proxy)
+- `OPENAI_BASE_URL` - Optional OpenAI-compatible endpoint base URL (e.g. cliproxyapi)
 - `ANTHROPIC_API_KEY` - Anthropic API key
 - `DEEPSEEK_API_KEY` - DeepSeek API key
 - `NOVITA_API_KEY` - Novita API key (OpenAI-compatible endpoint)
