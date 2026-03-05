@@ -1,6 +1,7 @@
 """Memory updater for reading, writing, and updating memory data."""
 
 import json
+import logging
 import uuid
 from datetime import datetime
 from pathlib import Path
@@ -13,6 +14,8 @@ from src.agents.memory.prompt import (
 from src.config.memory_config import get_memory_config
 from src.config.paths import get_paths
 from src.models import create_chat_model
+
+logger = logging.getLogger(__name__)
 
 
 def _get_memory_file_path(agent_name: str | None = None) -> Path:
@@ -229,8 +232,18 @@ class MemoryUpdater:
             )
 
             # Call LLM
-            model = self._get_model()
-            response = model.invoke(prompt)
+            try:
+                model = self._get_model()
+            except Exception as e:
+                logger.error("Failed to initialize memory update model '%s': %s", self._model_name or config.model_name, e)
+                return False
+
+            try:
+                response = model.invoke(prompt)
+            except Exception as e:
+                logger.error("Failed to invoke memory update model '%s': %s", self._model_name or config.model_name, e)
+                return False
+
             response_text = str(response.content).strip()
 
             # Parse response

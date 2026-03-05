@@ -73,11 +73,17 @@ class TestTitleMiddlewareCoreLogic:
         assert middleware._should_generate_title(state) is False
 
     def test_generate_title_trims_quotes_and_respects_max_chars(self, monkeypatch):
-        _set_test_title_config(max_chars=12)
+        _set_test_title_config(max_chars=12, model_name="title-model")
         middleware = TitleMiddleware()
         fake_model = MagicMock()
         fake_model.invoke.return_value = MagicMock(content='"A very long generated title"')
-        monkeypatch.setattr("src.agents.middlewares.title_middleware.create_chat_model", lambda **kwargs: fake_model)
+        captured_kwargs = {}
+
+        def _fake_create_chat_model(**kwargs):
+            captured_kwargs.update(kwargs)
+            return fake_model
+
+        monkeypatch.setattr("src.agents.middlewares.title_middleware.create_chat_model", _fake_create_chat_model)
 
         state = {
             "messages": [
@@ -87,6 +93,7 @@ class TestTitleMiddlewareCoreLogic:
         }
         title = middleware._generate_title(state)
 
+        assert captured_kwargs == {"name": "title-model", "thinking_enabled": False}
         assert '"' not in title
         assert "'" not in title
         assert len(title) == 12

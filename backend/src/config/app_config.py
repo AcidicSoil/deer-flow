@@ -113,9 +113,12 @@ class AppConfig(BaseModel):
         """
         if isinstance(config, str):
             if config.startswith("$"):
-                env_value = os.getenv(config[1:])
+                env_name = config[1:]
+                env_value = os.getenv(env_name)
                 if env_value is None:
-                    raise ValueError(f"Environment variable {config[1:]} not found for config value {config}")
+                    raise ValueError(f"Environment variable {env_name} not found for config value {config}")
+                if env_name in {"OPENAI_API_KEY", "OPENAI_BASE_URL"} and not env_value.strip():
+                    raise ValueError(f"Environment variable {env_name} is empty for config value {config}")
                 return env_value
             return config
         elif isinstance(config, dict):

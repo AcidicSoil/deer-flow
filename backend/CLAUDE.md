@@ -144,6 +144,11 @@ Configuration priority:
 
 Config values starting with `$` are resolved as environment variables (e.g., `$OPENAI_API_KEY`, `$OPENAI_BASE_URL`).
 
+OpenAI reliability guarantees:
+- `$OPENAI_API_KEY` and `$OPENAI_BASE_URL` references fail fast if the env var is missing, empty, or whitespace-only.
+- For `langchain_openai:ChatOpenAI`, runtime settings use model config first, then env fallback (`OPENAI_API_KEY`, `OPENAI_BASE_URL`).
+- Model initialization errors include model/provider context for debugging, without exposing secret values.
+
 **Extensions Configuration** (`extensions_config.json`):
 
 MCP servers and skills are configured together in `extensions_config.json` in project root:

@@ -118,6 +118,11 @@ Learn more and see **real demos** on our official website.
 
    `api_key` is forwarded to the configured OpenAI-compatible endpoint. If your backend runs in a container, `127.0.0.1` may not reach host services; use a host/service-resolvable address instead.
 
+   Runtime behavior guarantees for OpenAI-compatible models:
+   - `api_key` is required at runtime (from model config first, then `OPENAI_API_KEY` fallback).
+   - If `base_url` is omitted in model config, DeerFlow falls back to `OPENAI_BASE_URL` when set.
+   - Empty or whitespace-only `OPENAI_API_KEY` / `OPENAI_BASE_URL` values now fail fast with actionable errors.
+
 - Option B: Export environment variables in your shell
 
    ```bash

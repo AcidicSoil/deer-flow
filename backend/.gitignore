@@ -17,7 +17,7 @@ log/*
 # Virtual environments
 .venv
 venv/
-
+.env
 # User config file
 config.yaml
 

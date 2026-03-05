@@ -1,7 +1,0 @@
-{
-  "tool_name": "Read",
-  "tool_input_preview": "{\"file_path\":\"/home/user/projects/temp/ai-apps/deer-flow/CLAUDE.md\"}",
-  "error": "File does not exist. Note: your current working directory is /home/user/projects/temp/ai-apps/deer-flow.",
-  "timestamp": "2026-03-05T02:18:12.591Z",
-  "retry_count": 1
-}
