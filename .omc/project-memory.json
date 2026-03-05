@@ -1,0 +1,246 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1772667295360,
+  "projectRoot": "/home/user/projects/temp/ai-apps/deer-flow",
+  "techStack": {
+    "languages": [
+      {
+        "name": "C/C++",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "Makefile"
+        ]
+      }
+    ],
+    "frameworks": [],
+    "packageManager": null,
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": "make build",
+    "testCommand": "make test",
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "docs",
+      "scripts"
+    ],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "backend": {
+      "path": "backend",
+      "purpose": null,
+      "fileCount": 13,
+      "lastAccessed": 1772667295354,
+      "keyFiles": [
+        "AGENTS.md",
+        "CLAUDE.md",
+        "CONTRIBUTING.md",
+        "Dockerfile",
+        "Makefile"
+      ]
+    },
+    "docker": {
+      "path": "docker",
+      "purpose": null,
+      "fileCount": 1,
+      "lastAccessed": 1772667295354,
+      "keyFiles": [
+        "docker-compose-dev.yaml"
+      ]
+    },
+    "docs": {
+      "path": "docs",
+      "purpose": "Documentation",
+      "fileCount": 2,
+      "lastAccessed": 1772667295355,
+      "keyFiles": [
+        "CODE_CHANGE_SUMMARY_BY_FILE.md",
+        "SKILL_NAME_CONFLICT_FIX.md"
+      ]
+    },
+    "frontend": {
+      "path": "frontend",
+      "purpose": null,
+      "fileCount": 18,
+      "lastAccessed": 1772667295356,
+      "keyFiles": [
+        "AGENTS.md",
+        "CLAUDE.md",
+        "Dockerfile",
+        "Makefile",
+        "README.md"
+      ]
+    },
+    "scripts": {
+      "path": "scripts",
+      "purpose": "Build/utility scripts",
+      "fileCount": 2,
+      "lastAccessed": 1772667295357,
+      "keyFiles": [
+        "cleanup-containers.sh",
+        "docker.sh"
+      ]
+    },
+    "skills": {
+      "path": "skills",
+      "purpose": null,
+      "fileCount": 0,
+      "lastAccessed": 1772667295357,
+      "keyFiles": []
+    },
+    "skills/public": {
+      "path": "skills/public",
+      "purpose": "Public files",
+      "fileCount": 0,
+      "lastAccessed": 1772667295358,
+      "keyFiles": []
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "README.md",
+      "accessCount": 14,
+      "lastAccessed": 1772677147682,
+      "type": "file"
+    },
+    {
+      "path": "backend/docs/CONFIGURATION.md",
+      "accessCount": 13,
+      "lastAccessed": 1772677147851,
+      "type": "directory"
+    },
+    {
+      "path": "config.example.yaml",
+      "accessCount": 12,
+      "lastAccessed": 1772677147800,
+      "type": "directory"
+    },
+    {
+      "path": ".env.example",
+      "accessCount": 11,
+      "lastAccessed": 1772677147740,
+      "type": "directory"
+    },
+    {
+      "path": "",
+      "accessCount": 9,
+      "lastAccessed": 1772676975657,
+      "type": "directory"
+    },
+    {
+      "path": "backend/CLAUDE.md",
+      "accessCount": 8,
+      "lastAccessed": 1772677107236,
+      "type": "file"
+    },
+    {
+      "path": ".",
+      "accessCount": 6,
+      "lastAccessed": 1772675793671,
+      "type": "directory"
+    },
+    {
+      "path": "backend/src",
+      "accessCount": 5,
+      "lastAccessed": 1772677147702,
+      "type": "directory"
+    },
+    {
+      "path": "backend/src/config/app_config.py",
+      "accessCount": 4,
+      "lastAccessed": 1772676558924,
+      "type": "file"
+    },
+    {
+      "path": "backend/src/models/factory.py",
+      "accessCount": 4,
+      "lastAccessed": 1772676558977,
+      "type": "file"
+    },
+    {
+      "path": "backend/src/config/model_config.py",
+      "accessCount": 2,
+      "lastAccessed": 1772675805861,
+      "type": "file"
+    },
+    {
+      "path": "backend/src/agents/lead_agent/agent.py",
+      "accessCount": 2,
+      "lastAccessed": 1772675817918,
+      "type": "file"
+    },
+    {
+      "path": "frontend/CLAUDE.md",
+      "accessCount": 2,
+      "lastAccessed": 1772676910276,
+      "type": "file"
+    },
+    {
+      "path": "backend/src/client.py",
+      "accessCount": 1,
+      "lastAccessed": 1772675800633,
+      "type": "file"
+    },
+    {
+      "path": "backend/src/config",
+      "accessCount": 1,
+      "lastAccessed": 1772675801667,
+      "type": "directory"
+    },
+    {
+      "path": "backend/src/reflection/resolvers.py",
+      "accessCount": 1,
+      "lastAccessed": 1772675805756,
+      "type": "file"
+    },
+    {
+      "path": "config.yaml",
+      "accessCount": 1,
+      "lastAccessed": 1772675812213,
+      "type": "file"
+    },
+    {
+      "path": "backend/tests/test_lead_agent_model_resolution.py",
+      "accessCount": 1,
+      "lastAccessed": 1772675812267,
+      "type": "file"
+    },
+    {
+      "path": "backend/src/models/patched_deepseek.py",
+      "accessCount": 1,
+      "lastAccessed": 1772675817728,
+      "type": "file"
+    },
+    {
+      "path": "backend/src/models",
+      "accessCount": 1,
+      "lastAccessed": 1772675819898,
+      "type": "directory"
+    },
+    {
+      "path": "backend/README.md",
+      "accessCount": 1,
+      "lastAccessed": 1772675820018,
+      "type": "directory"
+    }
+  ],
+  "userDirectives": []
+}
